@@ -1,0 +1,93 @@
+.ProjectCard {
+    position: relative;
+    width: 90%;
+    z-Index: 2;
+    background-color: rgba(255, 220, 154);
+ 
+    padding: 20px 0 20px 0;
+    transition: top 250ms ease-in-out;
+    overflow: hidden;
+    margin: 20px 5% 20px 5%;
+}
+
+.ProjectCard h3 {
+    -webkit-text-stroke: 1px rgba(121, 116, 116, 0.767);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.closeButton {
+    display: none;
+}
+
+
+.linkButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.linkButtons button {
+    margin: 0 5px 0 5px;
+}
+
+
+.ProjectCard h5 {
+    font-weight: '300';
+}
+
+
+
+@media screen and (min-width: 480px) {
+
+    .closeButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+    }
+    
+    .closeButton:hover {
+        color:rgb(185, 185, 185)
+    }
+
+    .ProjectCard {
+        position: absolute;
+        width: 40%;
+        z-Index: 2;
+        background-color: rgba(255, 220, 154, 0.76);
+        padding: 20px;
+        border-radius: 10px;
+        border: solid black 3px;
+        transition: right 250ms ease-in-out;
+        right: 0;
+        transform: translateY(-90vh);
+        max-height: 80vh;
+        margin: 0;
+    }
+
+    .projectDescription {
+        overflow: auto;
+        max-height: 100px;
+        scrollbar-width: thin;
+        scrollbar-color: #FF4E50 grey;
+        padding: 10px 0 10px 0;
+        margin-bottom: 10px;
+    }
+
+    .projectDescription::-webkit-scrollbar {
+        width: 7px; 
+        margin: 3px;
+     }
+  
+    .projectDescription::-webkit-scrollbar-track {
+      background-color: black;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background: #FF4E50;
+      border-radius: 25px;
+    }
+  }

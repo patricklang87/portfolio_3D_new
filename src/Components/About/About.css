@@ -1,0 +1,38 @@
+#about {
+    background-color: #f8b87cfb;
+    padding: 30px;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+
+
+
+.about img {
+    height: 250px;
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+}
+
+@media screen and (min-width: 480px) {
+    .about {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        margin-top: 50px;
+    }
+    
+    .aboutInfo {
+        grid-column: 3 / span 4;
+        text-align: left;
+    }
+    
+    .aboutPortrait {
+        grid-column: 8 / span 2
+    }
+  }
+
+
+
+  

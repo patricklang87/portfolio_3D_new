@@ -1,0 +1,30 @@
+#skills {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#skills div {
+    grid-column: 3 / span 8;
+}
+
+.skill-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: middle;
+}
+
+.skill-logo {
+    max-height: 50px;
+    max-width: 70px;
+    
+}
+
+.skill-card {
+    display: flex;
+    align-items: center;
+    margin: 2px 6px 2px 6px;
+}
+
+@media screen and (min-width: 480px) {
+}

@@ -1,0 +1,50 @@
+#contact {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.emailForm {
+    padding: 10px;
+    box-shadow: 3px 3px 7px rgb(219, 219, 219) ;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* .contactContent {
+    width: 95%;
+} */
+
+.labelInputPair {
+    text-align: left;
+}
+
+input, textarea {
+    width: 90%;
+    border-radius: 5px;
+    margin: 0 0 10px 0
+}
+
+label {
+    font-size: small;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+
+    #contact {
+        height: 90vh;
+    }
+
+    input, textarea {
+        width: 400px;
+    }
+
+    .emailForm {
+        padding: 30px;
+    }
+  }

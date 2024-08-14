@@ -1,0 +1,86 @@
+Object { object: {…}, domElement: canvas, enabled: true, target: {…}, minDistance: 0, maxDistance: Infinity, minZoom: 0, maxZoom: Infinity, minPolarAngle: -1.0471975511965976, maxPolarAngle: 1.5707963267948966, … }
+​
+__r3f: Object { root: useStore(selector, equalityFn), memoizedProps: {…}, objects: [] }
+​
+_domElementKeyEvents: null
+​
+autoRotate: true
+​
+autoRotateSpeed: -1
+​
+dampingFactor: 0.05
+​
+dispose: function dispose()
+​
+domElement: <canvas style="display: block; width: 1…px; touch-action: none;" width="1349" height="674">
+​
+enableDamping: true
+​
+enablePan: true
+​
+enableRotate: true
+​
+enableZoom: false
+​
+enabled: true
+​
+getAzimuthalAngle: function getAzimuthalAngle()
+​
+getDistance: function getDistance()
+​
+getPolarAngle: function getPolarAngle()
+​
+keyPanSpeed: 7
+​
+keys: Object { LEFT: "ArrowLeft", UP: "ArrowUp", RIGHT: "ArrowRight", … }
+​
+listenToKeyEvents: function listenToKeyEvents(domElement)
+​
+maxAzimuthAngle: Infinity
+​
+maxDistance: Infinity
+​
+maxPolarAngle: 1.5707963267948966
+​
+maxZoom: Infinity
+​
+minAzimuthAngle: -Infinity
+​
+minDistance: 0
+​
+minPolarAngle: -1.0471975511965976
+​
+minZoom: 0
+​
+mouseButtons: Object { LEFT: 0, MIDDLE: 1, RIGHT: 2 }
+​
+object: Object { uuid: "2FB1790A-C3A1-4CA9-BF78-4438BE3FA829", name: "", type: "PerspectiveCamera", … }
+​
+panSpeed: 1
+​
+parent: Object { uuid: "E5417831-D47A-4226-8401-FEBC8A2D682D", name: "", type: "Scene", … }
+​
+position0: Object { x: 0, y: 14, z: 110 }
+​
+reset: function reset()
+​
+rotateSpeed: 1
+​
+saveState: function saveState()
+​
+screenSpacePanning: true
+​
+target: Object { x: 0, y: 0, z: 0 }
+​
+target0: Object { x: 0, y: 0, z: 0 }
+​
+touches: Object { ONE: 0, TWO: 2 }
+​
+update: function update()
+​
+zoom0: 1
+​
+zoomSpeed: 1
+​
+<prototype>: Object { … }
+react_devtools_backend.js:4049:25
