@@ -18,15 +18,22 @@ app.use(express.json());
 app.use('/api/mail', mail);
 
 //Serve static assets if we are in production
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
     // Set a static folder (serve the client folder)
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-}
+    // app.use(express.static('client/build'));
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+    // });
+// }
 
-const port = process.env.PORT || 5000;
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+const port = process.env.PORT || 4000
+;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 
