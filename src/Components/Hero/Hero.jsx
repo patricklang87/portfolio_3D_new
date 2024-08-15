@@ -9,7 +9,7 @@ export default function Hero() {
                     Hi! I'm Patrick.
                 </h1>
                 <h2>
-                    I'm a full stack developer with 2&frac12; years professional experience, excited for the next step in my career.
+                    I'm a full stack developer with 2&frac12; years professional experience. I love learning and I am excited for the next step in my career.
                 </h2>
                 <a href="#contact">
                     <button>

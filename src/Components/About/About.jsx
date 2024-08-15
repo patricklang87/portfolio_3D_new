@@ -2,6 +2,7 @@ import React from "react";
 import portrait from "../../assets/images/self2.jpg";
 import "./About.css";
 import Skills from "../Skills/Skills";
+// import resume from "../../assets/documents/Lang_Patrick_Resume_20210908"
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
           </p>
           <h2>This portfolio</h2>
           <p>I'm a self-taught developer. This portfolio was originally created in 2021 and 2022 while I was landing my first coding job. Though it has lain dormant for a while, I am resurrecting it to serve as a visual focus for my job-search efforts. I won't be putting all projects back online, as they need to be transferred from create-react-app to vite, moved from Heroku to Render.io (RIP Heroku free tier) and have their outdated dependecies update. Needless to say, after several years working professionally, I would approach some of these projects differently that I did before.</p>
-          {/* | <a href="/documents/Lang_Patrick_Resume_20210908.pdf" download>PDF Resume</a> */}
+          {/* | <a href={resume} download>PDF Resume</a> */}
         </div>
         <div className="aboutPortrait">
           <img src={portrait} alt="Patrick Lang" />
