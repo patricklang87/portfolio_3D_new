@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { radius, projects } from '../../Components/Projects/projectsState';
 
-export default function Model({modelPath, position=[0, 0, 0], scale=1, isProjectModel, setCameraPosition, setHovered, setCurrentInfo, projNum, project, ...props}) {
+export default function Model({modelPath, position=[0, 0, 0], setModelSelected, scale=1, isProjectModel, setCameraPosition, setHovered, setCurrentInfo, projNum, project, ...props}) {
     const gltf = useLoader(GLTFLoader, modelPath);
     const ref = useRef();
 
@@ -18,11 +18,13 @@ export default function Model({modelPath, position=[0, 0, 0], scale=1, isProject
     if (window.innerWidth < 480) angleAdjustmentRad = 0;
 
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         if (isProjectModel) {
+            e.stopPropagation();
             
             if (window.innerWidth > 480) {
                 setCurrentInfo(project);
+                setModelSelected(true);
                 setTimeout(() => {
                     document.querySelector('#projects').scrollIntoView(false);
                 }, 400);  
@@ -41,7 +43,7 @@ export default function Model({modelPath, position=[0, 0, 0], scale=1, isProject
 
     return (
         <mesh {...props} ref={ref} position={position} castShadow recieveShadow onPointerOver={(e) => setHovered(ref)}
-        onPointerOut={(e) => setHovered(null)} onClick={handleClick}>
+        onPointerOut={(e) => setHovered(null)} onClick={(e) => handleClick(e)}>
             <primitive object={gltf.scene} dispose={null} scale={[scale, scale, scale]} />
         </mesh>     
     ) 

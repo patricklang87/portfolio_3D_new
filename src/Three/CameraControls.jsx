@@ -18,7 +18,7 @@ export default function CameraControls({cameraPosition, modelSelected=false, cur
     let [x, y, z] = cameraPosition;
 
     useFrame(() => {
-        if (currentInfo) {
+        if (modelSelected) {
                 const camPosVec = new THREE.Vector3(x, y, z);
             camera.position.lerp(camPosVec, 0.1);
         }

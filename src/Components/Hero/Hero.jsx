@@ -1,5 +1,5 @@
 import './Hero.css';
-import React from 'react'
+import React from 'react';
 
 export default function Hero() {
     return (
@@ -9,10 +9,10 @@ export default function Hero() {
                     Hi! I'm Patrick.
                 </h1>
                 <h2>
-                    I'm a full stack developer with 2&frac12; years professional experience. I love learning and I am excited for the next step in my career.
+                I'm a full stack developer with <strong>2&frac12; years professional experience</strong>. I love new challenges and I am excited for the next step in my career.
                 </h2>
                 <a href="#contact">
-                    <button>
+                    <button style={{backgroundColor: 'hotpink'}}>
                         Get in touch!
                     </button> 
                 </a>

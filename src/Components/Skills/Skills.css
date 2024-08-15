@@ -1,6 +1,7 @@
 #skills {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    background-color: #f8b87cfb;
 }
 
 #skills div {
@@ -17,7 +18,7 @@
 .skill-logo {
     max-height: 50px;
     max-width: 70px;
-    
+    margin: 5px;
 }
 
 .skill-card {

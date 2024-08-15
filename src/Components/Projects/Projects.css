@@ -10,12 +10,14 @@
 
 .Projects canvas {
     width: 100%;
-    height: 80vh;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(32, 255, 151, 0.26) 35%, rgb(121, 20, 151) 50%, rgb(0, 0, 0) 60%);
+    height: 50vh;
+    /* background: linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(32, 255, 151, 0.26) 35%, rgb(121, 20, 151) 50%, rgb(0, 0, 0) 60%); */
 }
 
 @media screen and (min-width: 480px) {
+
+    
     .Projects canvas {
-        height: 70vh; 
+        height: 75vh; 
     }
   }

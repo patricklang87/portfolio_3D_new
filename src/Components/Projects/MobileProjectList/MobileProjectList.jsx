@@ -2,7 +2,7 @@ import React from 'react';
 import { projects } from '../projectsState';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
 
-export default function MobileProjectList({setCurrentInfo, currentInfo}) {
+export default function MobileProjectList({ setCurrentInfo }) {
     const projectList = projects.map((project) => {
         return (
             <ProjectInfo setCurrentInfo={setCurrentInfo} project={project} key={project.title} />
@@ -10,7 +10,7 @@ export default function MobileProjectList({setCurrentInfo, currentInfo}) {
     });
 
     return (
-        <div>
+        <div className="mobileProjectList" >
             {projectList}
         </div>
     )

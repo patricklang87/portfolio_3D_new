@@ -8,7 +8,7 @@ import threejsLogo from '../../assets/logos/threejs-logo.png';
 import expressjsLogo from '../../assets/logos/expressjs.png';
 import socketIOLogo from '../../assets/logos/socketio-logo.png';
 import axiosLogo from '../../assets/logos/axios-logo.svg';
-import nodeLogo from '../../assets/logos/node_logo.svg';
+import nodeLogo from '../../assets/logos/node_logo.png';
 import npmLogo from '../../assets/logos/npm-logo.png';
 import './Skills.css';
 
@@ -77,6 +77,15 @@ const techOther = [
     },
     {
         title: 'Bcrypt.js',
+    },
+    {
+        title: 'Nodemailer',
+    },
+    {
+        title: 'PostgreSQL'
+    },
+    {
+        title: 'SASS'
     }
 ]
 

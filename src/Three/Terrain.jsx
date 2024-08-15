@@ -16,8 +16,7 @@ export default function Terrain({GROUND_HEIGHT, setCurrentInfo}) {
         // onClick={() => {setCurrentInfo(null)}}
         ref={terrain}
       >
-        {/* <circleBufferGeometry attach="geometry" args={[150, 36]} /> */}
-        <circleGeometry attach="geometry" args={[150, 36]} />
+        <circleBufferGeometry attach="geometry" args={[150, 36]} />
         <meshStandardMaterial
           attach="material"
           color="#FC913A"

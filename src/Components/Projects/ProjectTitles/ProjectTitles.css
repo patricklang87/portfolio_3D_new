@@ -1,0 +1,17 @@
+.ProjectTitles {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.titlesList {
+    cursor: pointer;
+}
+
+.selectable:hover {
+    color: hotpink
+}
+
