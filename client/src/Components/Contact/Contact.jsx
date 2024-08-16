@@ -136,6 +136,17 @@ export default function Contact() {
               Send
             </button>
           </div>
+          <p>
+            Or contact me via{" "}
+            <a
+              href="https://www.linkedin.com/in/pslang/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            .
+          </p>
         </div>
       ) : (
         msgSent

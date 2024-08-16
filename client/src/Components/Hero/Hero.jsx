@@ -6,10 +6,10 @@ export default function Hero() {
         <div className="Hero">
             <div className="heroMessage">
                 <h1>
-                    Hi! I'm Patrick.
+                    Hi! I&apos;m Patrick.
                 </h1>
                 <h2>
-                I'm a full stack developer working professionally <strong>since April 2022</strong>. I love new challenges and I am excited for the next step in my career.
+                I&apos;m a full stack developer working professionally <strong>since April 2022</strong>. I love new challenges and I am looking for the <strong>next step in my career</strong>.
                 </h2>
                 <a href="#contact">
                     <button style={{backgroundColor: 'hotpink'}}>
