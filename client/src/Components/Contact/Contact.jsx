@@ -1,89 +1,145 @@
-import React, {useState} from 'react';
-import './Contact.css';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./Contact.css";
+import axios from "axios";
 
 export default function Contact() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [business, setBusiness] = useState('');
-    const [text, setText] = useState('');
-    const [msg, setMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [business, setBusiness] = useState("");
+  const [text, setText] = useState("");
+  const [msg, setMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [complete, setComplete] = useState(false);
 
-    const handleSend = async () => {
-        if (!name || !email || !text) {
-            return setMsg("Please complete all starred fields.");
-        }
-
-        if (!email.includes('@') || !email.includes('.')) {
-            return setMsg("Please use a valid e-mail address");
-        }
-
-
-        let res = await axios.post('/api/mail', { name, email, business, text });
-        if (res.status === 200) {
-            console.log('Email Sent');
-            setSuccess(true);
-        } else {
-            setMsg("Something went wrong. Please try again soon, or contact me via LinkedIn.")
-        }
-
+  const handleSend = async () => {
+    if (!name || !email || !text) {
+      return setMsg("Please complete all starred fields.");
     }
 
-    const handleClear = () => {
-        setMsg("");
-        setName("");
-        setEmail("");
-        setBusiness("");
-        setText("");
-        setSuccess(false);
+    if (!email.includes("@") || !email.includes(".")) {
+      return setMsg("Please use a valid e-mail address");
     }
 
-    const msgSent = (
-        <div>
-            <h1>Thank you for your message! I'll get back to you soon.</h1>
-            <button style={{backgroundColor: 'hotpink'}} onClick={handleClear}>Send Another</button>
-        </div>
-    )
+    setMsg("Sending...");
+    axios
+      .post("/api/mail", { name, email, business, text })
+      .then((res) => {
+        console.log("Email Sent");
+        setSuccess(true);
+        setComplete(true);
+      })
+      .catch((err) => {
+        setComplete(true);
+      });
+  };
 
-    return (
-        <div id="contact">
-            {(!success) ? (
-            <div className="contactContent">
-            <h2>I'd love to hear from you!</h2>
-            <div className="emailForm">
-                {(msg) && <p style={{color: 'red'}}>{msg}</p>}
-                <div className="labelInputPair">
-                    <label for="name">Your Name*</label>
-                    <br />
-                    <input name="name"
-                    onChange={(e) => {setName(e.target.value); setMsg('');}} type="text"
-                    id="name" required />
-                </div>
-                <div className="labelInputPair">
-                    <label for="email">Your Email*</label>
-                    <br />
-                    <input onChange={(e) => {setEmail(e.target.value); setMsg('');}} type="email" name="email"
-                    id="email" required />
-                </div>
-                <div className="labelInputPair">
-                    <label for="business">Your Business</label>
-                    <br />
-                    <input onChange={(e) => {setBusiness(e.target.value)}} type="text" name="business"
-                    id="business" />
-                </div>
-                <div className="labelInputPair">
-                <label for="message">Your Message*</label>
-                <br />
-                <textarea onChange={(e) => {setText(e.target.value); setMsg('');}} name="message" rows="10" id="message" required />
-                </div>
-                <button style={{backgroundColor: 'hotpink'}} onClick={handleSend}>
-                    Send
-                </button>
+  const handleClear = () => {
+    setMsg("");
+    setName("");
+    setEmail("");
+    setBusiness("");
+    setText("");
+    setSuccess(false);
+    setComplete(false);
+  };
+
+  const msgSent = success ? (
+    <div>
+      <h1>Thank you for your message!</h1>{" "}
+      <p>I&apos;ll get back to you soon.</p>
+      <button style={{ backgroundColor: "hotpink" }} onClick={handleClear}>
+        Send Another
+      </button>
+    </div>
+  ) : (
+    <div>
+      <h1>Something went wrong.</h1>{" "}
+      <p>
+        Please try again soon, or contact me via{" "}
+        <a
+          href="https://www.linkedin.com/in/pslang/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        .
+      </p>
+      <button style={{ backgroundColor: "hotpink" }} onClick={handleClear}>
+        Try Again
+      </button>
+    </div>
+  );
+
+  return (
+    <div id="contact">
+      {!complete ? (
+        <div className="contactContent">
+          <h2>I&apos;d love to hear from you!</h2>
+          <div className="emailForm">
+            {msg && <p style={{ color: "red" }}>{msg}</p>}
+            <div className="labelInputPair">
+              <label htmlFor="name">Your Name*</label>
+              <br />
+              <input
+                name="name"
+                onChange={(e) => {
+                  setName(e.target.value);
+                  setMsg("");
+                }}
+                type="text"
+                id="name"
+                required
+              />
             </div>
-
-            </div>) : msgSent }
-            
+            <div className="labelInputPair">
+              <label htmlFor="email">Your Email*</label>
+              <br />
+              <input
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setMsg("");
+                }}
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+            </div>
+            <div className="labelInputPair">
+              <label htmlFor="business">Your Business</label>
+              <br />
+              <input
+                onChange={(e) => {
+                  setBusiness(e.target.value);
+                }}
+                type="text"
+                name="business"
+                id="business"
+              />
+            </div>
+            <div className="labelInputPair">
+              <label htmlFor="message">Your Message*</label>
+              <br />
+              <textarea
+                onChange={(e) => {
+                  setText(e.target.value);
+                  setMsg("");
+                }}
+                name="message"
+                rows="10"
+                id="message"
+                required
+              />
+            </div>
+            <button style={{ backgroundColor: "hotpink" }} onClick={handleSend}>
+              Send
+            </button>
+          </div>
         </div>
-    )
+      ) : (
+        msgSent
+      )}
+    </div>
+  );
 }

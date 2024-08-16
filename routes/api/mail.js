@@ -34,9 +34,10 @@ router.post('/', (req, res, next) => {
     transporter.sendMail(mailOptions, (err) => {
         if (err) {
             console.log(err);
+            res.status(500).send({message: "MAIL_FAILED"})
         } else {
             console.log("Sent from mail route endpoint");
-            res.status(200).send("Success")
+            res.status(200).send({message: "MAIL_SUCCESS"})
         }
     });
 });
