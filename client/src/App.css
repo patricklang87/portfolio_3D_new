@@ -43,6 +43,11 @@ button:hover {
   box-shadow: 1px 1px 7px black;
 }
 
+button:disabled {
+  box-shadow: none;
+  border-color: lightgrey;
+}
+
 
 
 @media only screen and (min-width: 480px) {

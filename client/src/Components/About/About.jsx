@@ -38,7 +38,7 @@ export default function About() {
               back since!
             </p>
             <a href={resume} download>
-              <button>Check out my Resume!</button>
+              <button>View my resume</button>
             </a>
           </div>
         </div>

@@ -132,8 +132,8 @@ export default function Contact() {
                 required
               />
             </div>
-            <button style={{ backgroundColor: "hotpink" }} onClick={handleSend}>
-              Send
+            <button disabled={msg === "Sending..."} style={{ backgroundColor: "hotpink" }} onClick={handleSend}>
+              {msg === "Sending..." ? "Sending..." : "Send"}
             </button>
           </div>
           <p>
