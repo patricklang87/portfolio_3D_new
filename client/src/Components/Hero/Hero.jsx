@@ -15,7 +15,7 @@ export default function Hero() {
         <a href="#contact">
           <button style={{ backgroundColor: "hotpink" }}>Get in touch</button>
         </a>{" "}
-        <a href={resume} download>
+        <a href={resume} target="_blank" rel="noopener noreferrer">
           <button style={{ marginLeft: "10px", backgroundColor: "hotpink" }}>
             View my resume
           </button>

@@ -37,7 +37,7 @@ export default function About() {
               first professional coding job in April 2022 and haven&apos;t looked
               back since!
             </p>
-            <a href={resume} download>
+            <a href={resume} target="_blank" rel="noopener noreferrer">
               <button>View my resume</button>
             </a>
           </div>
