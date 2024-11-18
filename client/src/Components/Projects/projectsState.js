@@ -51,7 +51,7 @@ export const projects = [
             modelPath: tictactoe,
             code_url: 'https://github.com/patricklang87/tictactoe-3d-mp',
             deployment_url: 'https://ttt-3d.onrender.com/',
-            description: 'A fullstack 3-Dimentional two-player tictactoe game. The 3-dimensionality was achieved in CSS and Vanilla JavaScript. Written to experiment with Express.JS and Socket.io.',
+            description: 'A fullstack 3-Dimentional two-player tictactoe game. Currently hosted on the free tier; please allow 40 seconds to load. The 3-dimensionality was achieved in CSS and Vanilla JavaScript. Written to experiment with Express.JS and Socket.io.',
             technologies: ['JavaScript', 'HTML5', 'CSS3', 'React', 'Redux', 'Node', 'NPM', 'Axios', 'Express', 'Socket.io', 'Mongoose', 'MongoDB', 'Heroku'],
             screenshots: ['ttt_awaiting', 'ttt_gameplay_desktop', 'ttt_gameplay_mobile', 'ttt_completed_mobile'],
             scale: 60,
