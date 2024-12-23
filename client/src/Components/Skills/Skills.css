@@ -1,7 +1,7 @@
 #skills {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background-color: #f8b87cfb;
+    background-color: #f0a560fb;
 }
 
 #skills div {

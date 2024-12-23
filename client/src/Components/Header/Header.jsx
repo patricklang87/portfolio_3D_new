@@ -41,9 +41,9 @@ export default function Header() {
                     <li>
                         <a href='#about'>ABOUT</a>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href='#contact'>CONTACT</a>
-                    </li>
+                    </li> */}
 
                     <div className="externalLinks">
                         <ul>

@@ -73,7 +73,7 @@ export default function Projects() {
                 <Suspense fallback={<LoadingModel />}>
                     {projectCarousel}
                 </Suspense>
-                <fog attach="fog" args={["#f8b87cfb", 40, 200]} />
+                <fog attach="fog" args={["#f8b87cf", 40, 200]} />
                 {/* <Terrain GROUND_HEIGHT={-2} setCurrentInfo={setCurrentInfo} /> */}
                 {/* <EffectComposer multisampling={8} autoClear={false}>
                     <Outline blur selection={selected} visibleEdgeColor="white" edgeStrength={100} />

@@ -6,8 +6,9 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    padding: 20px 0 20px 0;
+    padding: 20px 5px 20px 5px;
     justify-content: center;
+    text-align: left;
 }
 
 .aboutAndSkills {
@@ -46,6 +47,11 @@
     }
     
     .aboutInfo {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .aboutSnippet {
         text-align: left;
         max-width: 400px;
     }
