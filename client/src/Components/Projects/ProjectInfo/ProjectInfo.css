@@ -73,7 +73,6 @@
 
     .projectDescription {
         overflow: auto;
-        max-height: 100px;
         scrollbar-width: thin;
         scrollbar-color: #FF4E50 grey;
         padding: 10px 0 10px 0;
