@@ -49,7 +49,7 @@ export const projects = [
         {
             title: 'TicTacToe 3D',
             modelPath: tictactoe,
-            code_url: 'https://github.com/patricklang87/tictactoe-3d-mp',
+            code_url: 'https://github.com/patricklang87/ttt-3d-new',
             deployment_url: 'https://ttt-3d.onrender.com/',
             description: 'A fullstack 3-Dimentional two-player tictactoe game. Currently hosted on the free tier; please allow 40 seconds to load. The 3-dimensionality was achieved in CSS and Vanilla JavaScript. Written to experiment with Express.JS and Socket.io.',
             technologies: ['JavaScript', 'HTML5', 'CSS3', 'React', 'Redux', 'Node', 'NPM', 'Axios', 'Express', 'Socket.io', 'Mongoose', 'MongoDB', 'Heroku'],
@@ -85,7 +85,7 @@ export const projects = [
         {
             title: '3D-Portfolio',
             modelPath: laptop,
-            code_url: 'https://github.com/patricklang87/portfolio_3D',
+            code_url: 'https://github.com/patricklang87/portfolio_3D_new',
             deployment_url: 'https://patricklangcoding.onrender.com',
             description: 'The site you are currently visiting. Taken as an opportunity to experiment with Three.js and React Three Fiber, as well as to play around in Blender. Includes a small backend to enable an email contact form.',
             technologies: ['JavaScript', 'HTML5', 'CSS3', 'React', 'React Three Fiber', 'Three.js', 'Nodemailer'],
