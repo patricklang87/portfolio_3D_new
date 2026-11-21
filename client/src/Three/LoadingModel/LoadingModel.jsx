@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber' 
 
-export default function LoadingModel() {
+export default function LoadingModel({ position = [0, 10, 50], size = 6 }) {
 
     const ref = useRef();
     useFrame(() => {
@@ -9,8 +9,8 @@ export default function LoadingModel() {
     })
 
     return (
-        <mesh ref={ref} visible position={[0, 10, 50]} rotation={[0, 0, 0]}>
-            <dodecahedronGeometry attach="geometry" args={[6, 0]} />
+        <mesh ref={ref} visible position={position} rotation={[0, 0, 0]}>
+            <dodecahedronGeometry attach="geometry" args={[size, 0]} />
             <meshStandardMaterial
                 attach="material"
                 color="aquamarine"
