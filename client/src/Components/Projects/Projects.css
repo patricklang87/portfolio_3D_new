@@ -2,9 +2,9 @@
     position: relative;
     width: 100%;
     text-align: center;
-    /* Fades from white at the top to the accent color two thirds of the way
-       down, then stays solid so it meets the section below seamlessly. */
-    background: linear-gradient(180deg, white 0%, var(--color-page-accent) 66.67%, var(--color-page-accent) 100%);
+    /* Solid white for the top three fifths, then fades to the accent color
+       over the bottom two fifths so it meets the section below seamlessly. */
+    background: linear-gradient(180deg, white 0%, white 60%, var(--color-page-accent) 100%);
 }
 
 .Projects h2 {
