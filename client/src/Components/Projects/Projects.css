@@ -2,6 +2,9 @@
     position: relative;
     width: 100%;
     text-align: center;
+    /* Solid white for the top three fifths, then fades to the accent color
+       over the bottom two fifths so it meets the section below seamlessly. */
+    background: linear-gradient(180deg, white 0%, white 60%, var(--color-page-accent) 100%);
 }
 
 .Projects h2 {

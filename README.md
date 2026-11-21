@@ -56,6 +56,18 @@ npm test
 
 Tests run on every push and pull request via GitHub Actions.
 
+## 3D models
+
+The `.glb` files in `client/src/assets/models` are compressed with [glTF Transform](https://gltf-transform.dev/) (meshopt geometry compression, WebP textures). `Model.jsx` registers three.js's bundled meshopt decoder so the loader can read them.
+
+To add or replace a model, export it from Blender as `.glb` and compress it:
+
+```bash
+npx @gltf-transform/cli@4.5.1 optimize input.glb client/src/assets/models/output.glb --compress meshopt --texture-compress webp --texture-size 1024 --simplify false --instance false
+```
+
+`--simplify false` and `--instance false` keep the geometry exactly as exported. Simplification and GPU instancing both visibly broke the dome on `capitol.glb`.
+
 ## Built with
 
 - JavaScript, HTML, CSS

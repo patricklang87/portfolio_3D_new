@@ -22,9 +22,11 @@ function App() {
       <main>
         <Hero />
         <Projects />
-        <About />
-        {/* <Contact /> */}
-        <Footer />
+        <div className="belowProjects">
+          <About />
+          {/* <Contact /> */}
+          <Footer />
+        </div>
       </main>
     </>
   );

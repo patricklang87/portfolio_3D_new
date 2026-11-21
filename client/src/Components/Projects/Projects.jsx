@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { ErrorBoundary } from 'react-error-boundary';
 import { EffectComposer, Outline } from '@react-three/postprocessing';
 import './Projects.css';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
@@ -28,21 +29,33 @@ export default function Projects() {
         const projNum = index;
         const xPos = radius * Math.cos(projNum * 2 * Math.PI / projects.length);
         const zPos = radius * Math.sin(projNum * 2 * Math.PI / projects.length);
+        const modelPosition = [xPos, project.height, zPos];
+        // Each model gets its own Suspense boundary so it appears as soon as
+        // its own file has loaded, instead of waiting for every model.
+        // The error boundary keeps one failed model from blanking the page:
+        // that model is left out and the rest of the site keeps working.
         return (
-            <Model
-                isProjectModel={true}
-                setCameraPosition={setCameraPosition}
-                setChangingFocus={setChangingFocus}
-                setHovered={setHovered}
-                setCurrentInfo={setCurrentInfo}
+            <ErrorBoundary
                 key={project.title}
-                modelPath={project.modelPath}
-                scale={project.scale}
-                project={project}
-                position={[xPos, project.height, zPos]}
-                projNum={projNum}
-                setModelSelected={setModelSelected}
-            />
+                fallback={null}
+                onError={(error) => console.warn(`Could not load the 3D model for "${project.title}"`, error)}
+            >
+                <Suspense fallback={<LoadingModel position={modelPosition} size={3} />}>
+                    <Model
+                        isProjectModel={true}
+                        setCameraPosition={setCameraPosition}
+                        setChangingFocus={setChangingFocus}
+                        setHovered={setHovered}
+                        setCurrentInfo={setCurrentInfo}
+                        modelPath={project.modelPath}
+                        scale={project.scale}
+                        project={project}
+                        position={modelPosition}
+                        projNum={projNum}
+                        setModelSelected={setModelSelected}
+                    />
+                </Suspense>
+            </ErrorBoundary>
         )
     });
 
@@ -70,9 +83,7 @@ export default function Projects() {
                  <CameraControls cameraPosition={cameraPosition} changingFocus={changingFocus} setChangingFocus={setChangingFocus}
                  currentInfo={currentInfo} modelSelected={modelSelected} />
                 <Lighting />
-                <Suspense fallback={<LoadingModel />}>
-                    {projectCarousel}
-                </Suspense>
+                {projectCarousel}
                 <fog attach="fog" args={["#f8b87cf", 40, 200]} />
                 {/* <Terrain GROUND_HEIGHT={-2} setCurrentInfo={setCurrentInfo} /> */}
                 {/* <EffectComposer multisampling={8} autoClear={false}>
