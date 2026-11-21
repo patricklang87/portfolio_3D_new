@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { ErrorBoundary } from 'react-error-boundary';
 import { EffectComposer, Outline } from '@react-three/postprocessing';
 import './Projects.css';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
@@ -31,25 +32,30 @@ export default function Projects() {
         const modelPosition = [xPos, project.height, zPos];
         // Each model gets its own Suspense boundary so it appears as soon as
         // its own file has loaded, instead of waiting for every model.
+        // The error boundary keeps one failed model from blanking the page:
+        // that model is left out and the rest of the site keeps working.
         return (
-            <Suspense
+            <ErrorBoundary
                 key={project.title}
-                fallback={<LoadingModel position={modelPosition} size={3} />}
+                fallback={null}
+                onError={(error) => console.warn(`Could not load the 3D model for "${project.title}"`, error)}
             >
-                <Model
-                    isProjectModel={true}
-                    setCameraPosition={setCameraPosition}
-                    setChangingFocus={setChangingFocus}
-                    setHovered={setHovered}
-                    setCurrentInfo={setCurrentInfo}
-                    modelPath={project.modelPath}
-                    scale={project.scale}
-                    project={project}
-                    position={modelPosition}
-                    projNum={projNum}
-                    setModelSelected={setModelSelected}
-                />
-            </Suspense>
+                <Suspense fallback={<LoadingModel position={modelPosition} size={3} />}>
+                    <Model
+                        isProjectModel={true}
+                        setCameraPosition={setCameraPosition}
+                        setChangingFocus={setChangingFocus}
+                        setHovered={setHovered}
+                        setCurrentInfo={setCurrentInfo}
+                        modelPath={project.modelPath}
+                        scale={project.scale}
+                        project={project}
+                        position={modelPosition}
+                        projNum={projNum}
+                        setModelSelected={setModelSelected}
+                    />
+                </Suspense>
+            </ErrorBoundary>
         )
     });
 
