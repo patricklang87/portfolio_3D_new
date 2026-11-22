@@ -18,9 +18,13 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <>
-      <Header />
-      <main>
+      {/* The header and hero share one backdrop, so the purple glow can
+          start at the very top right of the screen, behind the nav. */}
+      <div className="intro">
+        <Header />
         <Hero />
+      </div>
+      <main>
         <Projects />
         <div className="belowProjects">
           <About />

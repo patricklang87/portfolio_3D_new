@@ -1,0 +1,16 @@
+.heroLaptop {
+    width: 100%;
+    height: 280px;
+}
+
+@media screen and (min-width: 768px) {
+    .heroLaptop {
+        height: 420px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .heroLaptop {
+        height: 500px;
+    }
+}
