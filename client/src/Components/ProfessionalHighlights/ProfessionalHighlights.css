@@ -1,0 +1,143 @@
+/* Phones: every row is a stacked card with labelled fields. */
+.ProfessionalHighlights {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    text-align: left;
+}
+
+.highlightsTable,
+.highlightsTable tbody,
+.highlightsTable tr,
+.highlightsTable th,
+.highlightsTable td {
+    display: block;
+}
+
+/* The header row is redundant once each cell carries its own label, but it
+   stays in the DOM (visually hidden) for screen readers. */
+.highlightsTable thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.highlightsTable tr {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border: 1px solid #d8d0e6;
+    border-left: 4px solid rgb(var(--color-intro-glow));
+    border-radius: 6px;
+    background: white;
+}
+
+.highlightsTable th[scope="row"] {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.highlightsTable td {
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.highlightsTable td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b5a8a;
+}
+
+.highlightPlaceholder {
+    border-style: dashed;
+    color: #6b6b6b;
+    font-style: italic;
+}
+
+/* Tablets and up: a real table. */
+@media screen and (min-width: 768px) {
+    .ProfessionalHighlights {
+        padding: 48px 5vw 64px;
+    }
+
+    .highlightsTable {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .highlightsTable thead {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        display: table-header-group;
+    }
+
+    .highlightsTable tbody {
+        display: table-row-group;
+    }
+
+    .highlightsTable tr {
+        display: table-row;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none;
+    }
+
+    .highlightsTable th,
+    .highlightsTable td {
+        display: table-cell;
+        margin: 0;
+        padding: 16px 14px;
+        border-bottom: 1px solid #d8d0e6;
+        vertical-align: top;
+    }
+
+    .highlightsTable thead th {
+        border-bottom: 2px solid rgb(var(--color-intro-glow));
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    .highlightsTable td::before {
+        content: none;
+    }
+
+    .highlightsTable th[scope="row"] {
+        font-size: 1.15rem;
+        white-space: nowrap;
+    }
+
+    /* Give the long text column the room. */
+    .highlightsTable td:nth-child(2) {
+        width: 18%;
+    }
+
+    .highlightsTable td:nth-child(3) {
+        width: 12%;
+        white-space: nowrap;
+    }
+
+    .highlightsTable td:nth-child(4) {
+        width: 50%;
+    }
+
+    .highlightPlaceholder th,
+    .highlightPlaceholder td {
+        border-bottom-style: dashed;
+    }
+}

@@ -9,6 +9,7 @@ import notepad from "./assets/models/notepad.glb";
 import laptop from "./assets/models/laptop.glb";
 import LoadingModel from "./Three/LoadingModel/LoadingModel";
 import Hero from "./Components/Hero/Hero";
+import ProfessionalHighlights from "./Components/ProfessionalHighlights/ProfessionalHighlights";
 import About from "./Components/About/About";
 
 import Projects from "./Components/Projects/Projects";
@@ -25,6 +26,7 @@ function App() {
         <Hero />
       </div>
       <main>
+        <ProfessionalHighlights />
         <Projects />
         <div className="belowProjects">
           <About />

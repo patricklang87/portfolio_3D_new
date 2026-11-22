@@ -36,6 +36,9 @@ export default function Header() {
             <nav>
                 <ul>
                     <li>
+                        <a href="#experience">EXPERIENCE</a>
+                    </li>
+                    <li>
                         <a href="#projects">PROJECTS</a>
                     </li>
                     <li>
