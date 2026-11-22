@@ -15,11 +15,11 @@ export default function About() {
           <div className="aboutSnippet">
             <h2>A little about me... </h2>
             <p>
-              After 2&frac12; great years as a Full Stack Software Developer at
-              MassMutual Life Insurance Company, I was laid off in September
-              2024. However, my own work continues. I am having a great time
-              working on personal projects and upskilling while searching for my
-              next professional challenge.
+              I&apos;m a software engineer on the Identity &amp; Tenancy team at
+              Snyk. Before that I worked on an internal developer portal at
+              Chewy and built a policy-servicing application at MassMutual
+              Life Insurance Company. I still love building things on my own,
+              as the personal projects on this page show.
             </p>
           </div>
 
@@ -70,9 +70,14 @@ export default function About() {
             </p>
 
             <h3>
-              Professional experience: Full Stack Developer at{" "}
+              Earlier professional experience: Full Stack Developer at{" "}
               <i>MassMutual Life Ins Co</i> (April 2022 - Sept 2024)
             </h3>
+            <p>
+              My current and most recent roles are summarized in the
+              professional highlights table above. This is more about my first
+              professional role.
+            </p>
             <p>
               At MassMutual I worked on a fast-paced agile team. I helped
               develop, deploy and improve ServiceNet 2.0, a web application used
@@ -118,7 +123,7 @@ export default function About() {
                   .
             </p>
 
-            <h3>Early Carreer</h3>
+            <h3>Early career</h3>
             <p>
               I earned a PhD in German Studies in 2019. While teaching German
               and Russian languages at UNC Chapel Hill during the pandemic, I
