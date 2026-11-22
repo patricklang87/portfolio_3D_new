@@ -23,23 +23,23 @@
     background-color: hotpink;
 }
 
-/* Tablets and up: text on the left, laptop on the right. */
+/* Tablets and up: the screen is split 50/50. The text block is centered in
+   the left half and the laptop in the right half, at any screen width. */
 @media screen and (min-width: 768px) {
     .Hero {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 24px;
-        padding: 40px 5vw 64px;
+        gap: 0;
+        padding: 40px 0 64px;
+    }
+
+    .heroMessage {
+        box-sizing: border-box;
+        width: min(100%, 36rem);
+        margin: 0 auto;
+        padding: 0 24px;
     }
 
     .heroIntro {
         font-size: 1.25rem;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .Hero {
-        max-width: 1280px;
-        margin: 0 auto;
-        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
     }
 }
