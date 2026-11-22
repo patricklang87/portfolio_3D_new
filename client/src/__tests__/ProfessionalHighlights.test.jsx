@@ -34,11 +34,11 @@ describe("Professional highlights table", () => {
     cells.forEach((cell) => expect(cell).toHaveAttribute("data-label"));
   });
 
-  it("marks placeholder rows so they can be spotted before publishing", () => {
+  it("shows the UNC Chapel Hill years and team", () => {
     render(<ProfessionalHighlights />);
 
-    const placeholderRows = professionalHighlights.filter((highlight) => highlight.isPlaceholder);
-    const markedRows = document.querySelectorAll(".highlightPlaceholder");
-    expect(markedRows).toHaveLength(placeholderRows.length);
+    const uncRow = screen.getByRole("rowheader", { name: "UNC Chapel Hill" }).closest("tr");
+    expect(within(uncRow).getByText("2013 – 2021")).toBeInTheDocument();
+    expect(within(uncRow).getByText("Russian and German language instruction")).toBeInTheDocument();
   });
 });

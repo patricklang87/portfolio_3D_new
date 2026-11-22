@@ -1,7 +1,5 @@
 // Rows for the professional highlights table, newest first.
 // Content comes from the resume; keep it in sync when the resume changes.
-//
-// A row with `isPlaceholder: true` is a stand-in that still needs real content.
 export const professionalHighlights = [
     {
         workplace: 'Snyk',
@@ -26,9 +24,9 @@ export const professionalHighlights = [
     },
     {
         workplace: 'UNC Chapel Hill',
-        team: '[Team: to be added]',
-        years: '[Years: to be added]',
-        learnings: '[Highlights from UNC Chapel Hill: to be added]',
-        isPlaceholder: true,
+        team: 'Russian and German language instruction',
+        years: '2013 – 2021',
+        learnings:
+            'Taught university Russian and German courses as a graduate teaching fellow, then as a Teaching Assistant Professor. Led teams of 3–4 graduate instructors to common deadlines and reorganized teaching and testing methods for the pandemic. Defended a book-length thesis on midcentury German theater, and received the UNC German Siegfried Mews Award for Excellence in Teaching German.',
     },
 ];

@@ -21,11 +21,7 @@ export default function ProfessionalHighlights() {
                 </thead>
                 <tbody role="rowgroup">
                     {professionalHighlights.map((highlight) => (
-                        <tr
-                            key={highlight.workplace}
-                            role="row"
-                            className={highlight.isPlaceholder ? 'highlightPlaceholder' : undefined}
-                        >
+                        <tr key={highlight.workplace} role="row">
                             <th scope="row" role="rowheader" data-label="Workplace">{highlight.workplace}</th>
                             <td role="cell" data-label="Team">{highlight.team}</td>
                             <td role="cell" data-label="Years">{highlight.years}</td>
