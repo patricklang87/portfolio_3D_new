@@ -1,10 +1,9 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import Contact from "../Components/Contact/Contact";
 
-vi.mock("axios");
+jest.mock("axios");
 
 const fillForm = async (user, { name = "Ada", email = "ada@example.com", message = "Hello!" } = {}) => {
   if (name) await user.type(screen.getByLabelText(/your name/i), name);
@@ -14,7 +13,7 @@ const fillForm = async (user, { name = "Ada", email = "ada@example.com", message
 
 describe("Contact form", () => {
   beforeEach(() => {
-    vi.resetAllMocks();
+    jest.resetAllMocks();
   });
 
   it("asks for all starred fields before sending", async () => {
