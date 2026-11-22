@@ -1,0 +1,23 @@
+/* Phones first; the section sits on white, above the 3D carousel. */
+.projectsIntro {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 20px 8px;
+}
+
+.projectsIntro h2 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+.projectsIntro p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+    .projectsIntro {
+        padding: 56px 20px 16px;
+    }
+}
