@@ -23,7 +23,7 @@ describe("Professional highlights table", () => {
     const chewyRow = screen.getByRole("rowheader", { name: "Chewy" }).closest("tr");
     expect(within(chewyRow).getByText("Developer Experience")).toBeInTheDocument();
     expect(within(chewyRow).getByText("2025 – 2026")).toBeInTheDocument();
-    expect(within(chewyRow).getByText(/Teams.*feature/)).toBeInTheDocument();
+    expect(within(chewyRow).getByText(/Led front end development of the "Teams" feature/)).toBeInTheDocument();
   });
 
   it("lists each workplace's contributions as bullet points", () => {
