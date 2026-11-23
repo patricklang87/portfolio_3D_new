@@ -71,7 +71,7 @@ export const projects = [
             deploymentLinkDisabled: false,
         },
         {
-            title: 'Lecturna Quizbuilder',
+            title: 'Quizbuilder',
             modelPath: notepad,
             code_url: 'https://github.com/patricklang87/quizbuilder',
             deployment_url: 'https://lecturna.herokuapp.com',
