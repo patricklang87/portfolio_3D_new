@@ -8,11 +8,19 @@ export default function Hero() {
       <div className="heroMessage">
         <h1 id="heroTitle">Hi! I&apos;m Patrick.</h1>
         <p className="heroIntro">
-          I&apos;m a <strong>software developer</strong> with <strong>four years of professional experience</strong>. My expertise lies in front-end work, primarily React, TypeScript, and Node.js, but I have worked in full-stack roles for several years.
-          Scroll down for highlights from my professional work, followed by personal projects I built along the way.
+          I&apos;m a <strong>software developer</strong> with{" "}
+          <strong>four years of professional experience</strong>. My expertise
+          lies in front-end work, primarily React and TypeScript, and I have
+          worked in full-stack roles (Node.js) for several years. Scroll down
+          for highlights from my professional work, followed by the projects I
+          built while learning to code.
         </p>
         <div className="heroActions">
-          <a href="https://www.linkedin.com/in/pslang/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/pslang/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="heroButton">Get in touch</button>
           </a>
           <a href={resume} target="_blank" rel="noopener noreferrer">

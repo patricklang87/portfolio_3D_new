@@ -12,10 +12,9 @@ export default function About() {
             </h3>
 
             <p>
-              I am currently working on <i>Tanks fer Nuthin&apos;</i>, a clone
-              of &quot;Scorched Earth&quot;, a favorite game from my childhood.
-              Select a weapon, set a firing angle and power, and launch to
-              destroy enemy tanks. ({" "}
+              A clone of &quot;Scorched Earth&quot;, a favorite game from my
+              childhood. Select a weapon, set a firing angle and power, and
+              launch to destroy enemy tanks. ({" "}
               <a
                 style={{ textDecoration: "underline" }}
                 href="https://patricklang87.github.io/tanks_2/"
@@ -40,25 +39,24 @@ export default function About() {
             </p>
             <ul>
               <li>
-                Created a reusable Canvas component integrating TypeScript/React
-                with the JavaScript Canvas API for easy and efficient sprite
-                animations.
+                Built a reusable Canvas component that integrates
+                TypeScript/React with the JavaScript Canvas API for efficient
+                sprite animations.
               </li>
               <li>
-                Has begun work on a backend in Java Spring Boot to enable
-                websockets for online multiplayer. Will employ Redux Tool Kit
-                Query on the front end for clean API integration.
+                Started a Java Spring Boot backend to enable WebSocket
+                multiplayer, with Redux Toolkit Query planned for clean API
+                integration on the front end.
               </li>
               <li>
-                In a future phase, I plan to migrate the front end to React
-                Native and package game as an App.
+                Planned next: migrate the front end to React Native and package
+                the game as an app.
               </li>
               <li>
-                I started this project in 2024 but it was interrupted when I was
-                rehired after a period without work. Now I am using it to test
-                &apos;software factory&apos; production techniques working
-                independently with Claude. I hope to deploy a multiplayer online
-                version of this game soon.
+                Begun in 2024 and paused when I returned to full-time work.
+                I&apos;m now resuming it to test &quot;software factory&quot;
+                techniques, building independently with Claude, with the goal of
+                deploying an online multiplayer version.
               </li>
             </ul>
           </div>
