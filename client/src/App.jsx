@@ -9,6 +9,7 @@ import notepad from "./assets/models/notepad.glb";
 import laptop from "./assets/models/laptop.glb";
 import LoadingModel from "./Three/LoadingModel/LoadingModel";
 import Hero from "./Components/Hero/Hero";
+import ProfessionalHighlights from "./Components/ProfessionalHighlights/ProfessionalHighlights";
 import About from "./Components/About/About";
 
 import Projects from "./Components/Projects/Projects";
@@ -18,9 +19,14 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <>
-      <Header />
-      <main>
+      {/* The header and hero share one backdrop, so the purple glow can
+          start at the very top right of the screen, behind the nav. */}
+      <div className="intro">
+        <Header />
         <Hero />
+      </div>
+      <main>
+        <ProfessionalHighlights />
         <Projects />
         <div className="belowProjects">
           <About />

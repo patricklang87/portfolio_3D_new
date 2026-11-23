@@ -36,10 +36,10 @@ export default function Header() {
             <nav>
                 <ul>
                     <li>
-                        <a href="#projects">PROJECTS</a>
+                        <a href="#experience">EXPERIENCE</a>
                     </li>
                     <li>
-                        <a href='#about'>ABOUT</a>
+                        <a href="#projects">PROJECTS</a>
                     </li>
                     {/* <li>
                         <a href='#contact'>CONTACT</a>

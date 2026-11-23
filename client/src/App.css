@@ -2,6 +2,7 @@
 
 :root {
   --color-page-accent: #f8b87c;
+  --color-intro-glow: 138, 63, 252;
 }
 
 html,
@@ -13,6 +14,35 @@ body,
   background-color: white;
   text-align: center;
   scroll-behavior: smooth;
+}
+
+/* Purple glow washing in from the top right of the screen, behind the hero
+   laptop. It fades to transparent before the bottom of the intro, so the
+   section below starts on plain white. */
+.intro {
+  background:
+    radial-gradient(
+      ellipse 70% 85% at 100% 0%,
+      rgba(var(--color-intro-glow), 0.85) 0%,
+      rgba(var(--color-intro-glow), 0.45) 40%,
+      rgba(var(--color-intro-glow), 0) 75%
+    ),
+    white;
+}
+
+/* On phones the laptop sits below the text, so the glow reaches further down
+   to stay partly behind it. */
+@media screen and (max-width: 767px) {
+  .intro {
+    background:
+      radial-gradient(
+        ellipse 130% 100% at 100% 0%,
+        rgba(var(--color-intro-glow), 0.8) 0%,
+        rgba(var(--color-intro-glow), 0.4) 40%,
+        rgba(var(--color-intro-glow), 0) 75%
+      ),
+      white;
+  }
 }
 
 /* Everything below the 3D projects section sits on the accent color. */
