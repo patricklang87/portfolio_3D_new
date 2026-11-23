@@ -1,11 +1,3 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom/vitest';
-import { afterEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
-
-afterEach(() => {
-  cleanup();
-});
+// Adds jest-dom's DOM matchers, such as toBeInTheDocument().
+// React Testing Library unmounts rendered components after each test on its own under Jest.
+import '@testing-library/jest-dom';

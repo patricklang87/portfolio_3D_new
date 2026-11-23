@@ -52,7 +52,7 @@ npm test
 ```
 
 - **Server** (Jest + Supertest): the `/api/mail` route builds the right email and reports success or failure.
-- **Client** (Vitest + React Testing Library): contact form validation, sending, and success and error states, plus a check that every project card has the data it needs.
+- **Client** (Jest + React Testing Library): contact form validation, sending, and success and error states, plus a check that every project card has the data it needs.
 
 Tests run on every push and pull request via GitHub Actions.
 
@@ -74,7 +74,7 @@ npx @gltf-transform/cli@4.5.1 optimize input.glb client/src/assets/models/output
 - React, Vite
 - React Three Fiber / Three.js, Blender
 - Node, Express, Nodemailer
-- Vitest, React Testing Library, Jest, Supertest
+- Jest, React Testing Library, Supertest
 
 ## Author
 
