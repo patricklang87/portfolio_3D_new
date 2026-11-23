@@ -37,30 +37,30 @@ export default function About() {
                 Backend repo
               </a>{" "}
               )
-              <ul>
-                <li>
-                  Created a reusable Canvas component integrating
-                  TypeScript/React with the JavaScript Canvas API for easy and
-                  efficient sprite animations.
-                </li>
-                <li>
-                  Has begun work on a backend in Java Spring Boot to enable
-                  websockets for online multiplayer. Will employ Redux Tool Kit
-                  Query on the front end for clean API integration.
-                </li>
-                <li>
-                  In a future phase, I plan to migrate the front end to React
-                  Native and package game as an App.
-                </li>
-                <li>
-                  I started this project in 2024 but it was interupted when I
-                  was rehired after a period without work. Now I am using it to
-                  test &apos;software factory&apos; production techniques
-                  working independenly with Claude. I hope to deploy a
-                  multiplayer online version of this game soon.
-                </li>
-              </ul>
             </p>
+            <ul>
+              <li>
+                Created a reusable Canvas component integrating TypeScript/React
+                with the JavaScript Canvas API for easy and efficient sprite
+                animations.
+              </li>
+              <li>
+                Has begun work on a backend in Java Spring Boot to enable
+                websockets for online multiplayer. Will employ Redux Tool Kit
+                Query on the front end for clean API integration.
+              </li>
+              <li>
+                In a future phase, I plan to migrate the front end to React
+                Native and package game as an App.
+              </li>
+              <li>
+                I started this project in 2024 but it was interrupted when I was
+                rehired after a period without work. Now I am using it to test
+                &apos;software factory&apos; production techniques working
+                independently with Claude. I hope to deploy a multiplayer online
+                version of this game soon.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
