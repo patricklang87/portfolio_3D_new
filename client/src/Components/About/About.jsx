@@ -1,12 +1,10 @@
 import React from "react";
 import "./About.css";
-import Skills from "../Skills/Skills";
-import resume from "../../assets/documents/lang_resume.pdf";
 
 export default function About() {
   return (
     <div id="about">
-      <div className="aboutAndSkills">
+      <div className="aboutContent">
         <div className="about">
           <div className="aboutInfo">
             <h3>
@@ -53,22 +51,8 @@ export default function About() {
                 </li>
               </ul>
             </p>
-
-            <h3>Early career</h3>
-            <p>
-              I earned a PhD in German Studies in 2019. While teaching German
-              and Russian languages at UNC Chapel Hill during the pandemic, I
-              decided to retrain as a software developer, and learned to code
-              using a variety of online resources, such as CodeCademy. I began
-              my first professional coding job in April 2022 and haven&apos;t
-              looked back since!
-            </p>
-            <a href={resume} target="_blank" rel="noopener noreferrer">
-              <button>View my resume</button>
-            </a>
           </div>
         </div>
-        <Skills />
       </div>
     </div>
   );

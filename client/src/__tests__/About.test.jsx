@@ -2,27 +2,30 @@ import { render, screen } from "@testing-library/react";
 import About from "../Components/About/About";
 
 describe("About section", () => {
-  it("keeps the personal project, early career and resume link", () => {
+  it("shows only the Tanks fer Nuthin' personal project", () => {
     render(<About />);
 
-    expect(screen.getByRole("heading", { name: /Personal project/ })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Early career" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "View my resume" })).toBeInTheDocument();
+    const headings = screen.getAllByRole("heading").map((heading) => heading.textContent);
+    expect(headings).toHaveLength(1);
+    expect(headings[0]).toMatch(/Personal project:\s+Tanks fer Nuthin'/);
   });
 
-  it("no longer has the about me, earlier experience or this portfolio sections", () => {
+  it("links to the project's deployment and repositories", () => {
     render(<About />);
 
-    expect(screen.queryByRole("heading", { name: /A little about me/ })).not.toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: /Earlier professional experience/ })).not.toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: "This portfolio" })).not.toBeInTheDocument();
-    expect(screen.queryByAltText("Patrick Lang")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Frontend Deployment" })).toHaveAttribute(
+      "href",
+      "https://patricklang87.github.io/tanks_2/"
+    );
+    expect(screen.getByRole("link", { name: "Frontend Repo" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Backend repo" })).toBeInTheDocument();
   });
 
-  it("no longer describes a job search", () => {
+  it("no longer has the early career, skills or resume content", () => {
     render(<About />);
 
-    expect(screen.queryByText(/laid off/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/searching for my\s+next/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Early career" })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Technologies I use regularly/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "View my resume" })).not.toBeInTheDocument();
   });
 });

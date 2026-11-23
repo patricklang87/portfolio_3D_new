@@ -11,7 +11,7 @@
     text-align: left;
 }
 
-.aboutAndSkills {
+.aboutContent {
     background-color: #f8b87cfb;
 }
 
@@ -23,7 +23,7 @@
         display: grid;
     }
 
-    .aboutAndSkills {
+    .aboutContent {
         display: grid;
         grid-column: 3 / span 8;
         padding: 20px;
