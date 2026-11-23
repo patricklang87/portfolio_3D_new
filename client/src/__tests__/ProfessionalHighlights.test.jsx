@@ -25,7 +25,7 @@ describe("Professional highlights table", () => {
     expect(within(chewyRow).getByText("2025 – 2026")).toBeInTheDocument();
     expect(within(chewyRow).getByText(/Led front end development of the "Teams" feature/)).toBeInTheDocument();
     const chewyBullets = within(chewyRow).getAllByRole("listitem").map((bullet) => bullet.textContent);
-    expect(chewyBullets[2]).toMatch(/^Soaked up the mindset that internal customers deserve the customer treatment/);
+    expect(chewyBullets[2]).toMatch(/^Adopted a customer-first mindset for internal tools/);
   });
 
   it("lists each workplace's contributions as bullet points", () => {
