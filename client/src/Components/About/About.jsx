@@ -1,5 +1,4 @@
 import React from "react";
-import portrait from "../../assets/images/self2.jpg";
 import "./About.css";
 import Skills from "../Skills/Skills";
 import resume from "../../assets/documents/lang_resume.pdf";
@@ -9,20 +8,6 @@ export default function About() {
     <div id="about">
       <div className="aboutAndSkills">
         <div className="about">
-          <div className="aboutPortrait">
-            <img src={portrait} alt="Patrick Lang" />
-          </div>
-          <div className="aboutSnippet">
-            <h2>A little about me... </h2>
-            <p>
-              I&apos;m a software engineer on the Identity &amp; Tenancy team at
-              Snyk. Before that I worked on an internal developer portal at
-              Chewy and built a policy-servicing application at MassMutual
-              Life Insurance Company. I still love building things on my own,
-              as the personal projects on this page show.
-            </p>
-          </div>
-
           <div className="aboutInfo">
             <h3>
               Personal project: <i>Tanks fer Nuthin&apos;</i> (Sept. 2024 -
@@ -69,60 +54,6 @@ export default function About() {
               </ul>
             </p>
 
-            <h3>
-              Earlier professional experience: Full Stack Developer at{" "}
-              <i>MassMutual Life Ins Co</i> (April 2022 - Sept 2024)
-            </h3>
-            <p>
-              My current and most recent roles are summarized in the
-              professional highlights table above. This is more about my first
-              professional role.
-            </p>
-            <p>
-              At MassMutual I worked on a fast-paced agile team. I helped
-              develop, deploy and improve ServiceNet 2.0, a web application used
-              by financial professionals to service their clients&apos; policies
-              and contracts.
-              <ul>
-                <li>
-                  Built out front-end features in React and modern JavaScript,
-                  concentrating on code clarity, component reusability, and unit
-                  test coverage.
-                </li>
-                <br />
-                <li>
-                  Integrated and maintained RESTful API calls in the application
-                  backend layer, testing with Postman and Kong API logs.
-                </li>
-                <br />
-                <li>
-                  Worked closely with all sides of my Agile application team,
-                  often in a cross-functional capacity.
-                </li>
-                <br />
-                <li>
-                  Presented new application features in stakeholder meetings for
-                  early feedback and continuous input.
-                </li>
-                <br />
-                <li>
-                  Coordinated with a variety of internal and external teams to
-                  spearhead microservice integration and expansion (DocuSign,
-                  Quantum Metrics, Communications API), as well as SaaS
-                  migrations (Kafka Confluent Cloud, Vault SaaS) at the
-                  application level.
-                </li>
-              </ul>
-              See my commit history for MassMutual{" "}
-                  <a
-                    style={{ textDecoration: "underline" }}
-                    href="https://github.com/pslang11"
-                  >
-                    here
-                  </a>
-                  .
-            </p>
-
             <h3>Early career</h3>
             <p>
               I earned a PhD in German Studies in 2019. While teaching German
@@ -138,18 +69,6 @@ export default function About() {
           </div>
         </div>
         <Skills />
-        <div className="about">
-          <div className="aboutPortfolio">
-            <h2>This portfolio</h2>
-            <p>
-              This portfolio was originally created in 2021 and 2022 while I was
-              landing my first coding job and features several projects from
-              that time. As my concentration is on new projects, I will not be
-              redeploying all projects from that time, but you are very welcome
-              to view their GitHub repos!
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

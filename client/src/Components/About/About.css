@@ -15,12 +15,6 @@
     background-color: #f8b87cfb;
 }
 
-.about img {
-    height: 250px;
-    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-    
-}
-
 @media screen and (min-width: 480px) {
     #about {
         padding: 30px;
@@ -50,22 +44,4 @@
         text-align: left;
         max-width: 100%;
     }
-
-    .aboutSnippet {
-        text-align: left;
-        max-width: 400px;
-    }
-
-    .aboutPortfolio {
-        text-align: left;
-        max-width: 700px;
-    }
-    
-    .aboutPortrait {
-
-    }
   }
-
-
-
-  
