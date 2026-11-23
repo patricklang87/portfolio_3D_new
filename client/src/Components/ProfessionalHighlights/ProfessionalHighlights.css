@@ -55,6 +55,19 @@
     color: #6b5a8a;
 }
 
+/* Bullets hang outside the text: wrapped lines line up with the first word
+   of the item instead of tucking back under the bullet. The browser's default
+   list margins are removed so the cell padding is the only spacing. */
+.contributionsList {
+    margin: 4px 0 0;
+    padding-left: 1.25em;
+    list-style: disc outside;
+}
+
+.contributionsList li + li {
+    margin-top: 8px;
+}
+
 /* Tablets and up: a real table. */
 @media screen and (min-width: 768px) {
     .ProfessionalHighlights {
@@ -109,6 +122,11 @@
 
     .highlightsTable td::before {
         content: none;
+    }
+
+    /* The table cell already has padding; the list sits flush at the top. */
+    .contributionsList {
+        margin: 0;
     }
 
     .highlightsTable th[scope="row"] {

@@ -3,11 +3,11 @@ import ProfessionalHighlights from "../Components/ProfessionalHighlights/Profess
 import { professionalHighlights } from "../Components/ProfessionalHighlights/highlightsData";
 
 describe("Professional highlights table", () => {
-  it("has a column for workplace, team, years and learnings", () => {
+  it("has a column for workplace, team, years and contributions", () => {
     render(<ProfessionalHighlights />);
 
     const columnHeadings = screen.getAllByRole("columnheader").map((heading) => heading.textContent);
-    expect(columnHeadings).toEqual(["Workplace", "Team", "Years", "Learnings"]);
+    expect(columnHeadings).toEqual(["Workplace", "Team", "Years", "Contributions"]);
   });
 
   it("has one row per workplace, newest first", () => {
@@ -17,13 +17,23 @@ describe("Professional highlights table", () => {
     expect(workplaces).toEqual(["Snyk", "Chewy", "MassMutual", "UNC Chapel Hill"]);
   });
 
-  it("shows the team, years and learnings for a workplace in its row", () => {
+  it("shows the team, years and contributions for a workplace in its row", () => {
     render(<ProfessionalHighlights />);
 
     const chewyRow = screen.getByRole("rowheader", { name: "Chewy" }).closest("tr");
     expect(within(chewyRow).getByText("Developer Experience")).toBeInTheDocument();
     expect(within(chewyRow).getByText("2025 – 2026")).toBeInTheDocument();
     expect(within(chewyRow).getByText(/Teams.*feature/)).toBeInTheDocument();
+  });
+
+  it("lists each workplace's contributions as bullet points", () => {
+    render(<ProfessionalHighlights />);
+
+    professionalHighlights.forEach((highlight) => {
+      const row = screen.getByRole("rowheader", { name: highlight.workplace }).closest("tr");
+      const bullets = within(row).getAllByRole("listitem");
+      expect(bullets.map((bullet) => bullet.textContent)).toEqual(highlight.contributions);
+    });
   });
 
   it("labels every cell so the stacked phone layout can name each field", () => {
@@ -39,6 +49,6 @@ describe("Professional highlights table", () => {
 
     const uncRow = screen.getByRole("rowheader", { name: "UNC Chapel Hill" }).closest("tr");
     expect(within(uncRow).getByText("2013 – 2021")).toBeInTheDocument();
-    expect(within(uncRow).getByText("Russian and German language instruction")).toBeInTheDocument();
+    expect(within(uncRow).getByText("Department of Germanic and Slavic Languages and Literatures")).toBeInTheDocument();
   });
 });

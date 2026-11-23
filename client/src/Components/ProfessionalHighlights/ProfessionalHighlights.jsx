@@ -2,7 +2,17 @@ import React from 'react';
 import './ProfessionalHighlights.css';
 import { professionalHighlights } from './highlightsData';
 
-const COLUMN_HEADINGS = ['Workplace', 'Team', 'Years', 'Learnings'];
+const COLUMN_HEADINGS = ['Workplace', 'Team', 'Years', 'Contributions'];
+
+function ContributionsList({ contributions = [] }) {
+    return (
+        <ul className="contributionsList">
+            {contributions.map((contribution) => (
+                <li key={contribution}>{contribution}</li>
+            ))}
+        </ul>
+    );
+}
 
 // On phones each row becomes a stacked card (see the CSS), which hides the
 // header row. The explicit ARIA roles keep table semantics for screen readers
@@ -25,7 +35,9 @@ export default function ProfessionalHighlights() {
                             <th scope="row" role="rowheader" data-label="Workplace">{highlight.workplace}</th>
                             <td role="cell" data-label="Team">{highlight.team}</td>
                             <td role="cell" data-label="Years">{highlight.years}</td>
-                            <td role="cell" data-label="Learnings">{highlight.learnings}</td>
+                            <td role="cell" data-label="Contributions">
+                                <ContributionsList contributions={highlight.contributions} />
+                            </td>
                         </tr>
                     ))}
                 </tbody>
