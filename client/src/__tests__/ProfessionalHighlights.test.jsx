@@ -62,7 +62,7 @@ describe("Professional highlights table", () => {
 
     expect(githubHref("Snyk")).toHaveAttribute("href", "https://github.com/plang-snyk");
     expect(githubHref("Chewy")).toHaveAttribute("href", expect.stringContaining("github.com/plang-chwy?tab=overview&from=2025-01-01"));
-    expect(githubHref("MassMutual")).toHaveAttribute("href", expect.stringContaining("github.com/pslang11?tab=overview&from=2022-01-01"));
+    expect(githubHref("MassMutual")).toHaveAttribute("href", expect.stringContaining("github.com/pslang11?tab=overview&from=2023-01-01"));
     expect(githubHref("UNC Chapel Hill")).not.toBeInTheDocument();
   });
 });

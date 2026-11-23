@@ -14,7 +14,7 @@ export const professionalHighlights = [
   },
   {
     workplace: "Chewy",
-    githubUrl: "https://github.com/plang-chwy?tab=overview&from=2025-01-01&to=2026-12-31",
+    githubUrl: "https://github.com/plang-chwy?tab=overview&from=2025-01-01&to=2025-12-31",
     team: "Developer Experience",
     years: "2025 – 2026",
     contributions: [
@@ -25,7 +25,7 @@ export const professionalHighlights = [
   },
   {
     workplace: "MassMutual",
-    githubUrl: "https://github.com/pslang11?tab=overview&from=2022-01-01&to=2024-12-31",
+    githubUrl: "https://github.com/pslang11?tab=overview&from=2023-01-01&to=2023-12-31",
     team: "Financial Professional Portal",
     years: "2022 – 2024",
     contributions: [
