@@ -20,7 +20,7 @@ describe("Professional highlights table", () => {
   it("shows the team, years and contributions for a workplace in its row", () => {
     render(<ProfessionalHighlights />);
 
-    const chewyRow = screen.getByRole("rowheader", { name: "Chewy" }).closest("tr");
+    const chewyRow = screen.getByRole("rowheader", { name: /^Chewy/ }).closest("tr");
     expect(within(chewyRow).getByText("Developer Experience")).toBeInTheDocument();
     expect(within(chewyRow).getByText("2025 – 2026")).toBeInTheDocument();
     expect(within(chewyRow).getByText(/Led front end development of the "Teams" feature/)).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe("Professional highlights table", () => {
     render(<ProfessionalHighlights />);
 
     professionalHighlights.forEach((highlight) => {
-      const row = screen.getByRole("rowheader", { name: highlight.workplace }).closest("tr");
+      const row = screen.getByRole("rowheader", { name: new RegExp(`^${highlight.workplace}`) }).closest("tr");
       const bullets = within(row).getAllByRole("listitem");
       expect(bullets.map((bullet) => bullet.textContent)).toEqual(highlight.contributions);
     });
@@ -47,8 +47,22 @@ describe("Professional highlights table", () => {
   it("shows the UNC Chapel Hill years and team", () => {
     render(<ProfessionalHighlights />);
 
-    const uncRow = screen.getByRole("rowheader", { name: "UNC Chapel Hill" }).closest("tr");
+    const uncRow = screen.getByRole("rowheader", { name: /^UNC Chapel Hill/ }).closest("tr");
     expect(within(uncRow).getByText("2013 – 2021")).toBeInTheDocument();
     expect(within(uncRow).getByText("Department of Germanic and Slavic Languages and Literatures")).toBeInTheDocument();
+  });
+
+  it("links Snyk, Chewy and MassMutual to their GitHub activity, but not UNC", () => {
+    render(<ProfessionalHighlights />);
+
+    const githubHref = (workplace) =>
+      within(screen.getByRole("rowheader", { name: new RegExp(`^${workplace}`) }).closest("tr")).queryByRole("link", {
+        name: `GitHub activity at ${workplace}`,
+      });
+
+    expect(githubHref("Snyk")).toHaveAttribute("href", "https://github.com/plang-snyk");
+    expect(githubHref("Chewy")).toHaveAttribute("href", expect.stringContaining("github.com/plang-chwy?tab=overview&from=2025-01-01"));
+    expect(githubHref("MassMutual")).toHaveAttribute("href", expect.stringContaining("github.com/pslang11?tab=overview&from=2022-01-01"));
+    expect(githubHref("UNC Chapel Hill")).not.toBeInTheDocument();
   });
 });

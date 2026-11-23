@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProfessionalHighlights.css';
+import githubLogo from '../../assets/logos/GitHub-Mark-64px.png';
 import { professionalHighlights } from './highlightsData';
 
 const COLUMN_HEADINGS = ['Workplace', 'Team', 'Years', 'Contributions'];
@@ -32,7 +33,20 @@ export default function ProfessionalHighlights() {
                 <tbody role="rowgroup">
                     {professionalHighlights.map((highlight) => (
                         <tr key={highlight.workplace} role="row">
-                            <th scope="row" role="rowheader" data-label="Workplace">{highlight.workplace}</th>
+                            <th scope="row" role="rowheader" data-label="Workplace">
+                                {highlight.workplace}
+                                {highlight.githubUrl && (
+                                    <a
+                                        className="githubLink"
+                                        href={highlight.githubUrl}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        aria-label={`GitHub activity at ${highlight.workplace}`}
+                                    >
+                                        <img src={githubLogo} alt="" />
+                                    </a>
+                                )}
+                            </th>
                             <td role="cell" data-label="Team">{highlight.team}</td>
                             <td role="cell" data-label="Years">{highlight.years}</td>
                             <td role="cell" data-label="Contributions">

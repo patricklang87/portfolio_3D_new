@@ -148,3 +148,15 @@
         width: 50%;
     }
 }
+
+.highlightsTable .githubLink {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.highlightsTable .githubLink img {
+    height: 22px;
+    width: 22px;
+}
