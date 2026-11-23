@@ -9,7 +9,7 @@ describe("Hero", () => {
     render(<Hero />);
 
     expect(
-      screen.getByRole("heading", { level: 1, name: "Front-end developer who ships across the stack." })
+      screen.getByRole("heading", { level: 1, name: "A front-end developer who ships across the stack" })
     ).toBeInTheDocument();
   });
 

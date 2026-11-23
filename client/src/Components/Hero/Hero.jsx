@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="Hero" aria-labelledby="heroTitle">
       <div className="heroMessage">
-        <h1 id="heroTitle">Front-end developer who ships across the stack.</h1>
+        <h1 id="heroTitle">A front-end developer who ships across the stack</h1>
         <p className="heroIntro">
           Hi, I&apos;m Patrick Lang. I&apos;m a{" "}
           <strong>software developer</strong> with{" "}
