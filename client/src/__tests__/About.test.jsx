@@ -21,6 +21,14 @@ describe("About section", () => {
     expect(screen.getByRole("link", { name: "Backend repo" })).toBeInTheDocument();
   });
 
+  it("describes the project's status and the software factory experiment", () => {
+    render(<About />);
+
+    expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(/\(ongoing\)/);
+    expect(screen.getByText(/software factory/i)).toBeInTheDocument();
+    expect(screen.getAllByRole("listitem")).toHaveLength(4);
+  });
+
   it("no longer has the early career, skills or resume content", () => {
     render(<About />);
 
