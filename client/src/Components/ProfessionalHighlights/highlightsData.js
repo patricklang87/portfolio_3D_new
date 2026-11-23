@@ -20,6 +20,7 @@ export const professionalHighlights = [
     contributions: [
       'Led front end development of the "Teams" feature in the internal developer portal and presented it live at organization-wide meetings.',
       "Coached engineers in React and TypeScript and negotiated API contracts with the backend team.",
+      "Soaked up the mindset that internal customers deserve the customer treatment, in terms of functionality, communication, and design.",
       "Earned a Chewy Technology Excellence Award for contributions to the Teams feature.",
     ],
   },
