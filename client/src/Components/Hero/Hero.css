@@ -1,22 +1,45 @@
+/* Phones: text first, laptop underneath. */
 .Hero {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 20px 40px;
     text-align: left;
-    margin: 40px 0 40px 0;
 }
 
-.Hero h2 {
-    font-weight: 450;
+.heroIntro {
+    font-size: 1.15rem;
+    line-height: 1.5;
 }
 
-.heroMessage {
-    grid-column: 2 / span 10
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
+.heroButton {
+    background-color: hotpink;
+}
 
-
-@media only screen and (min-width: 480px) {
-    .heroMessage {
-        grid-column: 2 / span 3
+/* Tablets and up: the screen is split 50/50. The text block is centered in
+   the left half and the laptop in the right half, at any screen width. */
+@media screen and (min-width: 768px) {
+    .Hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 0;
+        padding: 40px 0 64px;
     }
-  }
+
+    .heroMessage {
+        box-sizing: border-box;
+        width: min(100%, 36rem);
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .heroIntro {
+        font-size: 1.25rem;
+    }
+}

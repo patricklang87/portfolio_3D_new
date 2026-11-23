@@ -5,6 +5,7 @@ import { EffectComposer, Outline } from '@react-three/postprocessing';
 import './Projects.css';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
 import ProjectTitles from './ProjectTitles/ProjectTitles';
+import ProjectsIntro from './ProjectsIntro/ProjectsIntro';
 
 import Lighting from '../../Three/Lighting/Lighting';
 import LoadingModel from '../../Three/LoadingModel/LoadingModel';
@@ -70,9 +71,9 @@ export default function Projects() {
 
 
     return (
-        <div dpr={[1, 2]} className="Projects" id="projects">
-            
-            <Canvas 
+        <section dpr={[1, 2]} className="Projects" id="projects" aria-labelledby="projectsTitle">
+            <ProjectsIntro />
+            <Canvas
                 onPointerMissed={handleCloseInfo}
                 shadowMap
                 camera={{
@@ -94,6 +95,6 @@ export default function Projects() {
             {(window.innerWidth < 480) && <MobileProjectsList />}
             {(window.innerWidth >= 480) && <ProjectTitles setCurrentInfo={setCurrentInfo} currentInfo={currentInfo} setCameraPosition={setCameraPosition} setModelSelected={setModelSelected} />}
 
-        </div>
+        </section>
     )
 }

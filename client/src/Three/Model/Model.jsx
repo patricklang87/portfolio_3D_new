@@ -1,15 +1,11 @@
 import React, { useRef } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { radius, projects } from '../../Components/Projects/projectsState';
-
-// The .glb files are compressed with gltf-transform (meshopt geometry
-// compression), so the loader needs the meshopt decoder to read them.
-const configureLoader = (loader) => loader.setMeshoptDecoder(MeshoptDecoder);
+import { configureGltfLoader } from '../gltfLoader';
 
 export default function Model({modelPath, position=[0, 0, 0], setModelSelected, scale=1, isProjectModel, setCameraPosition, setHovered, setCurrentInfo, projNum, project, ...props}) {
-    const gltf = useLoader(GLTFLoader, modelPath, configureLoader);
+    const gltf = useLoader(GLTFLoader, modelPath, configureGltfLoader);
     const ref = useRef();
 
     useFrame(() => {
