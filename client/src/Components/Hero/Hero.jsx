@@ -6,9 +6,10 @@ export default function Hero() {
   return (
     <section className="Hero" aria-labelledby="heroTitle">
       <div className="heroMessage">
-        <h1 id="heroTitle">Hi! I&apos;m Patrick.</h1>
+        <h1 id="heroTitle">Front-end developer who ships across the stack.</h1>
         <p className="heroIntro">
-          I&apos;m a <strong>software developer</strong> with{" "}
+          Hi, I&apos;m Patrick Lang. I&apos;m a{" "}
+          <strong>software developer</strong> with{" "}
           <strong>four years of professional experience</strong>. My expertise
           lies in front-end work, primarily React and TypeScript, and I have
           worked in full-stack roles (Node.js) for several years. Scroll down
